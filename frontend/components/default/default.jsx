@@ -8,7 +8,7 @@ class DefaultComponent extends React.Component {
   render() {
     return (
       <section>
-        <h1>React/Redux Boiler Plate</h1>
+        // first component
       </section>
     );
   }
