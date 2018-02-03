@@ -2,11 +2,11 @@
   "name": "react-boiler-plate",
   "version": "1.0.0",
   "description": "React/Redux boiler-plate.",
-  "main": "webpack.config.js",
+  "main": "./frontend/index.jsx",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "js": "webpack --watch",
-    "css": "sass --watch ./assets/scss/entry.scss:./assets/css/bundle.css"
+    "start": "sass --watch ./assets/scss/entry.scss:./assets/css/bundle.css",
+    "js": "webpack --watch"
   },
   "keywords": [],
   "author": "",
