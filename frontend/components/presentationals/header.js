@@ -7,7 +7,7 @@ class Header extends React.Component {
 
   render() {
     return (
-      <h1>React/Redux Boilerplate</h1>
+      <h1>LMNO recordings</h1>
     );
   }
 }
