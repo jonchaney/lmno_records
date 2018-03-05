@@ -1,9 +1,11 @@
 @import 'reset.scss';
+@import 'topContainer.scss';
 
-h1 {
-  font-family: sans-serif;
-}
-
-body {
+html {
   background-image: url(http://res.cloudinary.com/tonedream/image/upload/v1520275987/lmno_records/rainbowLMNO_pcurx2.jpg);
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
 }
