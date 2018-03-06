@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Bands extends React.Component {
+class BandShow extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -13,10 +13,11 @@ class Bands extends React.Component {
             <section>{this.props.title}</section>
             <section>{`Artist: ${this.props.artist}`}</section>
             <section>{this.props.location}</section>
+            {this.props.icon}
         </div>
       </div>
     );
   }
 }
 
-export default Bands;
+export default BandShow;
