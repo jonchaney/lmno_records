@@ -85,6 +85,26 @@ h1 {
   padding-top: 2%;
   padding-bottom: 1%; }
 
+.bands {
+  display: flex;
+  flex-direction: column;
+  padding-top: 27vh; }
+  .bands div {
+    background-color: white; }
+  .bands article {
+    display: flex;
+    flex-direction: column;
+    padding: 2% 5%; }
+    .bands article img {
+      width: 100%; }
+    .bands article .band-info section {
+      padding: 4% 0% 0% 4%;
+      font-family: Lato, sans-serif;
+      display: flex;
+      flex-direction: column; }
+    .bands article .band-info section:last-child {
+      padding-bottom: 3%; }
+
 html {
   background-image: url(http://res.cloudinary.com/tonedream/image/upload/v1520275987/lmno_records/rainbowLMNO_pcurx2.jpg);
   background-size: cover;

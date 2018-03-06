@@ -25678,6 +25678,10 @@ var _navBar = __webpack_require__(216);
 
 var _navBar2 = _interopRequireDefault(_navBar);
 
+var _bands = __webpack_require__(217);
+
+var _bands2 = _interopRequireDefault(_bands);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var App = function App() {
@@ -25689,7 +25693,8 @@ var App = function App() {
             { className: 'top-container' },
             _react2.default.createElement(_reactRouterDom.Route, { path: '/', component: _header2.default }),
             _react2.default.createElement(_reactRouterDom.Route, { path: '/', component: _navBar2.default })
-        )
+        ),
+        _react2.default.createElement(_reactRouterDom.Route, { path: '/', component: _bands2.default })
     );
 };
 
@@ -28767,6 +28772,156 @@ var NavBar = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = NavBar;
+
+/***/ }),
+/* 217 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _audioPlayer = __webpack_require__(218);
+
+var _audioPlayer2 = _interopRequireDefault(_audioPlayer);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Bands = function (_React$Component) {
+  _inherits(Bands, _React$Component);
+
+  function Bands(props) {
+    _classCallCheck(this, Bands);
+
+    var _this = _possibleConstructorReturn(this, (Bands.__proto__ || Object.getPrototypeOf(Bands)).call(this, props));
+
+    _this.state = {
+      songFile: ["desoulations.mp3", "harvestmoon.mp3", "heygene.mp3", "pumpkin.mp3", "slowcrawl.mp3"],
+      bands: ["Desoulations", "Hazel's Wart", "Kiss Cam", "Pumpkin", "Slow Crawl"],
+      tracks: ["Untitled", "Harvest Moon", "Hey Gene", "Marble Eyes", "Seemingly Never"],
+      location: ["Campbell", "SF", "SF", "SF", "SF"],
+      image: ["http://res.cloudinary.com/tonedream/image/upload/v1520291954/lmno_records/Screen_Shot_2018-02-24_at_7.45.08_PM.png", "http://res.cloudinary.com/tonedream/image/upload/v1520275990/lmno_records/hazelswart_pxdwv5.png", "http://res.cloudinary.com/tonedream/image/upload/v1520275986/lmno_records/kisscam_lii5me.png", "http://res.cloudinary.com/tonedream/image/upload/v1520275987/lmno_records/pumpkin_fltkqy.jpg", "http://res.cloudinary.com/tonedream/image/upload/v1520291859/lmno_records/Screen_Shot_2018-02-25_at_10.50.16_PM.png"]
+    };
+    return _this;
+  }
+
+  _createClass(Bands, [{
+    key: 'renderBands',
+    value: function renderBands() {
+      var _this2 = this;
+
+      var bands = this.state.bands.map(function (band, idx) {
+        return _react2.default.createElement(
+          'article',
+          { key: idx },
+          _react2.default.createElement(_audioPlayer2.default, { artist: band,
+            title: _this2.state.tracks[idx],
+            img: _this2.state.image[idx],
+            location: _this2.state.location[idx]
+          })
+        );
+      });
+      return bands;
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { className: 'bands' },
+        this.renderBands()
+      );
+    }
+  }]);
+
+  return Bands;
+}(_react2.default.Component);
+
+exports.default = Bands;
+
+/***/ }),
+/* 218 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Bands = function (_React$Component) {
+  _inherits(Bands, _React$Component);
+
+  function Bands(props) {
+    _classCallCheck(this, Bands);
+
+    return _possibleConstructorReturn(this, (Bands.__proto__ || Object.getPrototypeOf(Bands)).call(this, props));
+  }
+
+  _createClass(Bands, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        "div",
+        null,
+        _react2.default.createElement("img", { src: this.props.img }),
+        _react2.default.createElement(
+          "div",
+          { className: "band-info" },
+          _react2.default.createElement(
+            "section",
+            null,
+            this.props.title
+          ),
+          _react2.default.createElement(
+            "section",
+            null,
+            "Artist: " + this.props.artist
+          ),
+          _react2.default.createElement(
+            "section",
+            null,
+            this.props.location
+          )
+        )
+      );
+    }
+  }]);
+
+  return Bands;
+}(_react2.default.Component);
+
+exports.default = Bands;
 
 /***/ })
 /******/ ]);

@@ -1,0 +1,27 @@
+.bands {
+    display: flex;
+    flex-direction: column;
+    padding-top: 27vh;
+    div {
+        background-color: white;
+    }
+    article {
+        display: flex;
+        flex-direction: column;
+        padding: 2% 5%;
+        img {
+            width: 100%;
+        }
+        .band-info {
+            section {
+                padding: 4% 0% 0% 4%;
+                font-family: Lato, sans-serif;
+                display: flex;
+                flex-direction: column;
+            }
+            section:last-child {
+                padding-bottom: 3%;
+            }
+        }
+    }
+}
