@@ -16,7 +16,7 @@
 
 /node_modules
 /yarn-error.log
-/.npcrc
+/.npmrc
 # Ignore application configuratio
 /config/application.yml
 
