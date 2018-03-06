@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import BandShow from '../presentationals/bandShow.js';
 import ReactHowler from 'react-howler'
-
+import Icon from '../presentationals/icon.js'
+import FontAwesomeIcon from '@fortawesome/react-fontawesome'
+import { faPlay, faPause } from '@fortawesome/fontawesome-pro-solid'
 class FeaturedArtists extends React.Component {
   constructor(props) {
     super(props);
@@ -19,9 +21,9 @@ class FeaturedArtists extends React.Component {
 
   renderIcon(title) {
     if (title === this.state.currentSongTitle) {
-        return <i className="fas fa-pause"></i>;
+        return <FontAwesomeIcon icon={faPause}/>;
     } else {
-        return <i className="fas fa-play"></i>;
+        return <FontAwesomeIcon icon={faPlay}/>;
     }
   }
   
@@ -45,13 +47,22 @@ class FeaturedArtists extends React.Component {
     }
   }
 
+  howler() {
+    if(this.state.playing) {
+        return ( 
+            <ReactHowler
+                src={this.state.songURL}
+                playing={this.state.playing}/>
+        );
+    } else {
+        return null;
+    }
+  }
+
   render() {
     return (
       <div className="bands">
-        {/* <ReactHowler
-            src={this.state.songURL}
-            playing={true}
-        /> */}
+        {this.howler()}
         {this.renderBands()}
       </div>
     );
