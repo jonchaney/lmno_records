@@ -105,6 +105,17 @@ h1 {
     .bands article .band-info section:last-child {
       padding-bottom: 3%; }
 
+.space-info {
+  display: flex;
+  padding-top: 27vh; }
+  .space-info div {
+    background-color: white;
+    width: 100%;
+    font-family: Lato;
+    margin: 4% 4%; }
+    .space-info div p {
+      padding: 3% 3%; }
+
 html {
   background-image: url(http://res.cloudinary.com/tonedream/image/upload/v1520275987/lmno_records/rainbowLMNO_pcurx2.jpg);
   background-size: cover;
@@ -112,5 +123,14 @@ html {
   padding: 0;
   height: 100%;
   width: 100%; }
+
+a {
+  text-decoration: none; }
+
+a:visited {
+  text-decoration: none; }
+
+a:hover {
+  color: pink; }
 
 /*# sourceMappingURL=bundle.css.map */

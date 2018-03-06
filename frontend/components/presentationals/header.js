@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Header extends React.Component {
   constructor(props) {
@@ -7,7 +8,7 @@ class Header extends React.Component {
 
   render() {
     return (
-      <h1>LMNO recordings</h1>
+      <Link to="/" ><h1>LMNO recordings</h1></Link>
     );
   }
 }

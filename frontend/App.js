@@ -4,6 +4,9 @@ import { Route, Switch } from 'react-router-dom';
 import Header from "./components/presentationals/header.js";
 import NavBar from "./components/presentationals/navBar.js";
 import Bands from "./components/presentationals/bands.js";
+import About from "./components/presentationals/about.js";
+import Equipment from "./components/presentationals/equipment.js";
+import Contact from "./components/presentationals/contact.js";
 
 const App = () => (
     <div>
@@ -11,7 +14,12 @@ const App = () => (
             <Route path="/" component={Header} />
             <Route path="/" component={NavBar} />
         </div>
-        <Route path="/" component={Bands} />
+        <Route exact path="/" component={Bands} />
+        <div className="space-info">
+            <Route exact path="/about" component={About} />
+            <Route exact path="/equipment" component={Equipment} />
+            <Route exact path="/contact" component={Contact} />
+        </div>
     </div>
 );
 
