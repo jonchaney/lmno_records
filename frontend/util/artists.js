@@ -1,0 +1,1 @@
+export const artists = require('../../backend/bands.json');

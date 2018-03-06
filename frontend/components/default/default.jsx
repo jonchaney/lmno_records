@@ -8,7 +8,6 @@ class DefaultComponent extends React.Component {
   render() {
     return (
       <section>
-        // first component
       </section>
     );
   }

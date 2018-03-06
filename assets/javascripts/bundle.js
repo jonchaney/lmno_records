@@ -22190,54 +22190,20 @@ Object.defineProperty(exports, "__esModule", {
 
 var _redux = __webpack_require__(25);
 
-var _defaultReducer = __webpack_require__(108);
+var _artistsReducer = __webpack_require__(222);
 
-var _defaultReducer2 = _interopRequireDefault(_defaultReducer);
+var _artistsReducer2 = _interopRequireDefault(_artistsReducer);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var RootReducer = (0, _redux.combineReducers)({
-  default: _defaultReducer2.default
+  artists: _artistsReducer2.default
 });
 
 exports.default = RootReducer;
 
 /***/ }),
-/* 108 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _merge = __webpack_require__(109);
-
-var _merge2 = _interopRequireDefault(_merge);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var defaultState = {};
-
-var DefaultReducer = function DefaultReducer() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultState;
-  var action = arguments[1];
-
-  Object.freeze(state);
-  var newState = void 0;
-  switch (action.type) {
-    case "DEFAULT":
-      return;
-    default:
-      return state;
-  }
-};
-
-exports.default = DefaultReducer;
-
-/***/ }),
+/* 108 */,
 /* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -25678,9 +25644,9 @@ var _navBar = __webpack_require__(216);
 
 var _navBar2 = _interopRequireDefault(_navBar);
 
-var _bands = __webpack_require__(217);
+var _featuredArtistsContainer = __webpack_require__(226);
 
-var _bands2 = _interopRequireDefault(_bands);
+var _featuredArtistsContainer2 = _interopRequireDefault(_featuredArtistsContainer);
 
 var _about = __webpack_require__(219);
 
@@ -25706,7 +25672,7 @@ var App = function App() {
             _react2.default.createElement(_reactRouterDom.Route, { path: '/', component: _header2.default }),
             _react2.default.createElement(_reactRouterDom.Route, { path: '/', component: _navBar2.default })
         ),
-        _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _bands2.default }),
+        _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _featuredArtistsContainer2.default }),
         _react2.default.createElement(
             'div',
             { className: 'space-info' },
@@ -28813,87 +28779,7 @@ var NavBar = function (_React$Component) {
 exports.default = NavBar;
 
 /***/ }),
-/* 217 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _audioPlayer = __webpack_require__(218);
-
-var _audioPlayer2 = _interopRequireDefault(_audioPlayer);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Bands = function (_React$Component) {
-  _inherits(Bands, _React$Component);
-
-  function Bands(props) {
-    _classCallCheck(this, Bands);
-
-    var _this = _possibleConstructorReturn(this, (Bands.__proto__ || Object.getPrototypeOf(Bands)).call(this, props));
-
-    _this.state = {
-      songFile: ["desoulations.mp3", "harvestmoon.mp3", "heygene.mp3", "pumpkin.mp3", "slowcrawl.mp3"],
-      bands: ["Desoulations", "Hazel's Wart", "Kiss Cam", "Pumpkin", "Slow Crawl"],
-      tracks: ["Untitled", "Harvest Moon", "Hey Gene", "Marble Eyes", "Seemingly Never"],
-      location: ["Campbell", "SF", "SF", "SF", "SF"],
-      image: ["http://res.cloudinary.com/tonedream/image/upload/v1520291954/lmno_records/Screen_Shot_2018-02-24_at_7.45.08_PM.png", "http://res.cloudinary.com/tonedream/image/upload/v1520275990/lmno_records/hazelswart_pxdwv5.png", "http://res.cloudinary.com/tonedream/image/upload/v1520275986/lmno_records/kisscam_lii5me.png", "http://res.cloudinary.com/tonedream/image/upload/v1520275987/lmno_records/pumpkin_fltkqy.jpg", "http://res.cloudinary.com/tonedream/image/upload/v1520291859/lmno_records/Screen_Shot_2018-02-25_at_10.50.16_PM.png"]
-    };
-    return _this;
-  }
-
-  _createClass(Bands, [{
-    key: 'renderBands',
-    value: function renderBands() {
-      var _this2 = this;
-
-      var bands = this.state.bands.map(function (band, idx) {
-        return _react2.default.createElement(
-          'article',
-          { key: idx },
-          _react2.default.createElement(_audioPlayer2.default, { artist: band,
-            title: _this2.state.tracks[idx],
-            img: _this2.state.image[idx],
-            location: _this2.state.location[idx]
-          })
-        );
-      });
-      return bands;
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        'div',
-        { className: 'bands' },
-        this.renderBands()
-      );
-    }
-  }]);
-
-  return Bands;
-}(_react2.default.Component);
-
-exports.default = Bands;
-
-/***/ }),
+/* 217 */,
 /* 218 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -29128,7 +29014,42 @@ var Equipment = function (_React$Component) {
         _react2.default.createElement(
           'p',
           null,
-          'Sennheiser MD421 Microphones'
+          'Sennheiser MD421 Microphone'
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Sennheiser ME 66'
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Electrovoice RE20 Microphone'
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Electrovoice 635A Microphone'
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'AKG D112 MKII Microphone'
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Shure SM48, SM57, SM 58'
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Peavey PM 480 Microphone (3)'
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'DOD 260 Direct Box'
         )
       );
     }
@@ -29138,6 +29059,213 @@ var Equipment = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = Equipment;
+
+/***/ }),
+/* 222 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _merge = __webpack_require__(109);
+
+var _merge2 = _interopRequireDefault(_merge);
+
+var _artistActions = __webpack_require__(223);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var defaultState = {
+  artists: [{
+    "name": null,
+    "songTitle": null,
+    "songURL": null,
+    "location": null,
+    "imageURL": null
+  }]
+};
+
+var ArtistsReducer = function ArtistsReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultState;
+  var action = arguments[1];
+
+  Object.freeze(state);
+  var newState = action.artists;
+  switch (action.type) {
+    case _artistActions.RECEIVE_ARTISTS:
+      return newState.artists;
+    default:
+      return state;
+  }
+};
+
+exports.default = ArtistsReducer;
+
+/***/ }),
+/* 223 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.fetchArtists = exports.receiveArtists = exports.RECEIVE_ARTISTS = undefined;
+
+var _artists = __webpack_require__(224);
+
+var RECEIVE_ARTISTS = exports.RECEIVE_ARTISTS = "RECEIVE_ARTISTS";
+
+var receiveArtists = exports.receiveArtists = function receiveArtists(artists) {
+  return {
+    type: RECEIVE_ARTISTS,
+    artists: artists
+  };
+};
+
+var fetchArtists = exports.fetchArtists = function fetchArtists() {
+  return function (dispatch) {
+    dispatch(receiveArtists(_artists.artists));
+  };
+};
+
+/***/ }),
+/* 224 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var artists = exports.artists = __webpack_require__(225);
+
+/***/ }),
+/* 225 */
+/***/ (function(module, exports) {
+
+module.exports = {"artists":[{"name":"Desoulations","songTitle":"Untitled","songURL":"https://s3.amazonaws.com/lmno-recordings/desoulations.mp3","location":"Campbell","imageURL":"http://res.cloudinary.com/tonedream/image/upload/v1520291954/lmno_records/Screen_Shot_2018-02-24_at_7.45.08_PM.png"},{"name":"Kiss Cam","songTitle":"Hey Gene","songURL":"https://s3.amazonaws.com/lmno-recordings/heygene.mp3","location":"SF","imageURL":"http://res.cloudinary.com/tonedream/image/upload/v1520275986/lmno_records/kisscam_lii5me.png"},{"name":"Hazel's Wart","songTitle":"Harvest Moon","songURL":"https://s3.amazonaws.com/lmno-recordings/harvestmoon.mp3","location":"SF","imageURL":"http://res.cloudinary.com/tonedream/image/upload/v1520275990/lmno_records/hazelswart_pxdwv5.png"},{"name":"Pumpkin","songTitle":"Marble Eyes","songURL":"https://s3.amazonaws.com/lmno-recordings/pumpkin.mp3","location":"SF","imageURL":"http://res.cloudinary.com/tonedream/image/upload/v1520275987/lmno_records/pumpkin_fltkqy.jpg"},{"name":"Slow Crawl","songTitle":"Seemingly Never","songURL":"https://s3.amazonaws.com/lmno-recordings/slowcrawl.mp3","location":"SF","imageURL":"http://res.cloudinary.com/tonedream/image/upload/v1520291859/lmno_records/Screen_Shot_2018-02-25_at_10.50.16_PM.png"}]}
+
+/***/ }),
+/* 226 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _reactRedux = __webpack_require__(177);
+
+var _artistActions = __webpack_require__(223);
+
+var _featuredArtists = __webpack_require__(227);
+
+var _featuredArtists2 = _interopRequireDefault(_featuredArtists);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapStateToProps = function mapStateToProps(state) {
+    return {
+        artists: state.artists
+    };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+    return {
+        fetchArtists: function fetchArtists() {
+            return dispatch((0, _artistActions.fetchArtists)());
+        }
+    };
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_featuredArtists2.default);
+
+/***/ }),
+/* 227 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _audioPlayer = __webpack_require__(218);
+
+var _audioPlayer2 = _interopRequireDefault(_audioPlayer);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var FeaturedArtists = function (_React$Component) {
+  _inherits(FeaturedArtists, _React$Component);
+
+  function FeaturedArtists(props) {
+    _classCallCheck(this, FeaturedArtists);
+
+    return _possibleConstructorReturn(this, (FeaturedArtists.__proto__ || Object.getPrototypeOf(FeaturedArtists)).call(this, props));
+  }
+
+  _createClass(FeaturedArtists, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      window.scrollTo(0, 0);
+      this.props.fetchArtists();
+    }
+  }, {
+    key: 'renderBands',
+    value: function renderBands() {
+      if (this.props.artists[0]) {
+        var bands = this.props.artists.map(function (artist, idx) {
+          return _react2.default.createElement(
+            'article',
+            { key: idx },
+            _react2.default.createElement(_audioPlayer2.default, { artist: artist.name,
+              title: artist.songTitle,
+              img: artist.imageURL,
+              location: artist.location
+            })
+          );
+        });
+        return bands;
+      }
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { className: 'bands' },
+        this.renderBands()
+      );
+    }
+  }]);
+
+  return FeaturedArtists;
+}(_react2.default.Component);
+
+exports.default = FeaturedArtists;
 
 /***/ })
 /******/ ]);
