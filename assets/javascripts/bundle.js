@@ -29129,7 +29129,7 @@ exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -29165,84 +29165,94 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var FeaturedArtists = function (_React$Component) {
-    _inherits(FeaturedArtists, _React$Component);
+  _inherits(FeaturedArtists, _React$Component);
 
-    function FeaturedArtists(props) {
-        _classCallCheck(this, FeaturedArtists);
+  function FeaturedArtists(props) {
+    _classCallCheck(this, FeaturedArtists);
 
-        var _this = _possibleConstructorReturn(this, (FeaturedArtists.__proto__ || Object.getPrototypeOf(FeaturedArtists)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (FeaturedArtists.__proto__ || Object.getPrototypeOf(FeaturedArtists)).call(this, props));
 
-        _this.state = {
-            currentSongTitle: "",
-            songUrl: null,
-            playing: false
-        };
-        return _this;
+    _this.state = {
+      songUrl: null,
+      playing: false
+    };
+    return _this;
+  }
+
+  _createClass(FeaturedArtists, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      window.scrollTo(0, 0);
+      this.props.fetchArtists();
     }
+  }, {
+    key: 'renderIcon',
+    value: function renderIcon(song) {
+      if (song === this.state.songUrl) {
+        return _react2.default.createElement(_reactFontawesome2.default, { icon: _fontawesomeProSolid.faPause });
+      } else {
+        return _react2.default.createElement(_reactFontawesome2.default, { icon: _fontawesomeProSolid.faPlay });
+      }
+    }
+  }, {
+    key: 'playTrack',
+    value: function playTrack(song) {
+      if (this.state.songUrl === song) {
+        this.setState({ songUrl: null, playing: false });
+      } else {
+        this.setState({ songUrl: song, playing: true });
+      }
+    }
+  }, {
+    key: 'artists',
+    value: function artists() {
+      var _this2 = this;
 
-    _createClass(FeaturedArtists, [{
-        key: 'componentDidMount',
-        value: function componentDidMount() {
-            window.scrollTo(0, 0);
-            this.props.fetchArtists();
-        }
-    }, {
-        key: 'renderIcon',
-        value: function renderIcon(title) {
-            if (title === this.state.currentSongTitle) {
-                return _react2.default.createElement(_reactFontawesome2.default, { icon: _fontawesomeProSolid.faPause });
-            } else {
-                return _react2.default.createElement(_reactFontawesome2.default, { icon: _fontawesomeProSolid.faPlay });
-            }
-        }
-    }, {
-        key: 'renderBands',
-        value: function renderBands() {
-            var _this2 = this;
+      if (this.props.artists[0]) {
+        var bands = this.props.artists.map(function (artist, idx) {
+          return _react2.default.createElement(
+            'article',
+            { key: idx },
+            _react2.default.createElement(_bandShow2.default, { artist: artist.name,
+              title: artist.songTitle,
+              img: artist.imageURL,
+              location: artist.location,
+              songUrl: artist.songURL,
+              icon: _this2.renderIcon(artist.songURL),
+              play: function play(song) {
+                return _this2.playTrack(song);
+              }
+            })
+          );
+        });
+        return bands;
+      }
+    }
+  }, {
+    key: 'howler',
+    value: function howler() {
+      if (this.state.playing) {
+        return _react2.default.createElement(_reactHowler2.default, {
+          src: this.state.songUrl,
+          playing: this.state.playing,
+          html5: true });
+      } else {
+        return null;
+      }
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { className: 'bands' },
+        this.howler(),
+        this.artists()
+      );
+    }
+  }]);
 
-            var icon = void 0;
-            if (this.props.artists[0]) {
-                var bands = this.props.artists.map(function (artist, idx) {
-                    icon = _this2.renderIcon(artist.songTitle);
-                    return _react2.default.createElement(
-                        'article',
-                        { key: idx },
-                        _react2.default.createElement(_bandShow2.default, { artist: artist.name,
-                            title: artist.songTitle,
-                            img: artist.imageURL,
-                            location: artist.location,
-                            songUrl: artist.songURL,
-                            icon: icon
-                        })
-                    );
-                });
-                return bands;
-            }
-        }
-    }, {
-        key: 'howler',
-        value: function howler() {
-            if (this.state.playing) {
-                return _react2.default.createElement(_reactHowler2.default, {
-                    src: this.state.songURL,
-                    playing: this.state.playing });
-            } else {
-                return null;
-            }
-        }
-    }, {
-        key: 'render',
-        value: function render() {
-            return _react2.default.createElement(
-                'div',
-                { className: 'bands' },
-                this.howler(),
-                this.renderBands()
-            );
-        }
-    }]);
-
-    return FeaturedArtists;
+  return FeaturedArtists;
 }(_react2.default.Component);
 
 exports.default = FeaturedArtists;
@@ -29272,18 +29282,20 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var BandShow = function (_React$Component) {
-  _inherits(BandShow, _React$Component);
+var Band = function (_React$Component) {
+  _inherits(Band, _React$Component);
 
-  function BandShow(props) {
-    _classCallCheck(this, BandShow);
+  function Band(props) {
+    _classCallCheck(this, Band);
 
-    return _possibleConstructorReturn(this, (BandShow.__proto__ || Object.getPrototypeOf(BandShow)).call(this, props));
+    return _possibleConstructorReturn(this, (Band.__proto__ || Object.getPrototypeOf(Band)).call(this, props));
   }
 
-  _createClass(BandShow, [{
+  _createClass(Band, [{
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       return _react2.default.createElement(
         "div",
         null,
@@ -29306,16 +29318,22 @@ var BandShow = function (_React$Component) {
             null,
             this.props.location
           ),
-          this.props.icon
+          _react2.default.createElement(
+            "section",
+            { onClick: function onClick() {
+                return _this2.props.play(_this2.props.songUrl);
+              } },
+            this.props.icon
+          )
         )
       );
     }
   }]);
 
-  return BandShow;
+  return Band;
 }(_react2.default.Component);
 
-exports.default = BandShow;
+exports.default = Band;
 
 /***/ }),
 /* 229 */

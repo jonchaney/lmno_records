@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import BandShow from '../presentationals/bandShow.js';
+import Band from '../presentationals/bandShow.js';
 import ReactHowler from 'react-howler'
 import Icon from '../presentationals/icon.js'
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
@@ -8,7 +8,6 @@ class FeaturedArtists extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-        currentSongTitle: "",
         songUrl: null,
         playing: false
     }
@@ -19,28 +18,35 @@ class FeaturedArtists extends React.Component {
       this.props.fetchArtists();
   }
 
-  renderIcon(title) {
-    if (title === this.state.currentSongTitle) {
+  renderIcon(song) {
+    if (song === this.state.songUrl) {
         return <FontAwesomeIcon icon={faPause}/>;
     } else {
         return <FontAwesomeIcon icon={faPlay}/>;
     }
   }
+
+  playTrack(song) {
+      if (this.state.songUrl === song) {
+        this.setState({songUrl: null, playing: false})
+      } else {
+        this.setState({songUrl: song, playing: true})
+      }
+  }
   
 
-  renderBands() {
-      let icon;
+  artists() {
       if (this.props.artists[0]) {
-          let bands = this.props.artists.map((artist, idx) => {
-            icon = this.renderIcon(artist.songTitle);
+        let bands = this.props.artists.map((artist, idx) => {
         return ( <article key={idx}>
-                    <BandShow   artist={artist.name} 
-                                title={artist.songTitle}  
-                                img={artist.imageURL}
-                                location={artist.location}
-                                songUrl={artist.songURL}
-                                icon={icon}
-                                />
+                    <Band   artist={artist.name} 
+                            title={artist.songTitle}  
+                            img={artist.imageURL}
+                            location={artist.location}
+                            songUrl={artist.songURL}
+                            icon={this.renderIcon(artist.songURL)}
+                            play={(song) => this.playTrack(song)}
+                            />
                 </article>
           )});
       return bands;
@@ -51,8 +57,9 @@ class FeaturedArtists extends React.Component {
     if(this.state.playing) {
         return ( 
             <ReactHowler
-                src={this.state.songURL}
-                playing={this.state.playing}/>
+                src={this.state.songUrl}
+                playing={this.state.playing}
+                html5={true}/>
         );
     } else {
         return null;
@@ -63,7 +70,7 @@ class FeaturedArtists extends React.Component {
     return (
       <div className="bands">
         {this.howler()}
-        {this.renderBands()}
+        {this.artists()}
       </div>
     );
   }
