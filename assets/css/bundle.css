@@ -119,6 +119,39 @@ h1 {
       .bands article .band-info section:last-child {
         padding: 5% 10% 0% 0%; }
 
+@media (min-width: 700px) {
+  .bands {
+    display: flex;
+    flex-direction: row;
+    padding-top: 27vh;
+    width: 35vh; }
+    .bands div {
+      background-color: white;
+      border-radius: 5%; }
+    .bands article {
+      display: flex;
+      width: 35vh;
+      padding: 4% 5%; }
+      .bands article img {
+        width: 35vh;
+        height: 35vh;
+        border-top-left-radius: 5%;
+        border-top-right-radius: 5%; }
+      .bands article .band-info {
+        display: flex;
+        justify-content: space-between;
+        background: transparent; }
+        .bands article .band-info section {
+          font-family: Lato, sans-serif;
+          display: flex;
+          flex-direction: column; }
+          .bands article .band-info section svg {
+            font-size: 6vh; }
+          .bands article .band-info section p {
+            padding: 10% 0% 0% 0%;
+            font-size: 2vh; }
+        .bands article .band-info section:last-child {
+          padding: 10% 12% 0% 0%; } }
 .space-info {
   display: flex;
   justify-content: center;
@@ -136,9 +169,7 @@ html {
   background-image: url(http://res.cloudinary.com/tonedream/image/upload/v1520275987/lmno_records/rainbowLMNO_pcurx2.jpg);
   background-size: cover;
   margin: 0;
-  padding: 0;
-  height: 100%;
-  width: 100%; }
+  padding: 0; }
 
 a {
   text-decoration: none;

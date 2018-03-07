@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-
 class Band extends React.Component {
   constructor(props) {
     super(props);

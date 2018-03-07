@@ -38,3 +38,48 @@
         }
     }
 }
+
+@media (min-width: 700px) {
+    .bands {
+        display: flex;
+        flex-direction: row;
+        padding-top: 27vh;
+        width: 35vh;
+        div {
+            background-color: white;
+            border-radius: 5%;
+        }
+        article {
+            display: flex;
+            width: 35vh;
+            padding: 4% 5%;
+            img {
+                width: 35vh;
+                height: 35vh;
+                border-top-left-radius: 5%;
+                border-top-right-radius: 5%;
+            }
+            .band-info {
+                display: flex;
+                justify-content: space-between;
+                background: transparent;
+                section {
+                    svg {
+                        font-size: 6vh;
+                    }
+                    p {
+                        padding: 10% 0% 0% 0%;
+                        font-size: 2vh;
+                    }
+                    // padding: 0% 0% 3% 7%;
+                    font-family: Lato, sans-serif;
+                    display: flex;
+                    flex-direction: column;
+                }
+                section:last-child {
+                    padding: 10% 12% 0% 0%;
+                }
+            }
+        }
+    }
+ }
