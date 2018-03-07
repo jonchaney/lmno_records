@@ -84,26 +84,40 @@ h1 {
   color: purple;
   padding-top: 2%;
   padding-bottom: 1%; }
+  .nav-bar a li {
+    font-size: 2vh; }
 
 .bands {
   display: flex;
   flex-direction: column;
   padding-top: 27vh; }
   .bands div {
-    background-color: white; }
+    background-color: white;
+    border-radius: 5%; }
   .bands article {
     display: flex;
     flex-direction: column;
-    padding: 2% 5%; }
+    padding: 4% 5%; }
     .bands article img {
-      width: 100%; }
-    .bands article .band-info section {
-      padding: 4% 0% 0% 4%;
-      font-family: Lato, sans-serif;
+      width: 100%;
+      border-top-left-radius: 5%;
+      border-top-right-radius: 5%; }
+    .bands article .band-info {
       display: flex;
-      flex-direction: column; }
-    .bands article .band-info section:last-child {
-      padding-bottom: 3%; }
+      justify-content: space-between;
+      background: transparent; }
+      .bands article .band-info section {
+        padding: 0% 0% 3% 7%;
+        font-family: Lato, sans-serif;
+        display: flex;
+        flex-direction: column; }
+        .bands article .band-info section svg {
+          font-size: 8vh; }
+        .bands article .band-info section p {
+          padding: 10% 0% 0% 0%;
+          font-size: 2.2vh; }
+      .bands article .band-info section:last-child {
+        padding: 5% 10% 0% 0%; }
 
 .space-info {
   display: flex;

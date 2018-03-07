@@ -11,10 +11,14 @@ class Band extends React.Component {
       <div>
         <img src={this.props.img} />
         <div className="band-info">
-            <section>{this.props.title}</section>
-            <section>{`Artist: ${this.props.artist}`}</section>
-            <section>{this.props.location}</section>
-            <section onClick={() => this.props.play(this.props.songUrl)}>{this.props.icon}</section>
+            <section>
+              <p>{this.props.title}</p>
+              <p>{`Artist: ${this.props.artist}`}</p>
+              <p>{this.props.location}</p>
+            </section>
+            <section onClick={() => this.props.play(this.props.songUrl)}>
+              {this.props.icon}
+            </section>
         </div>
       </div>
     );

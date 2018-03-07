@@ -29306,17 +29306,21 @@ var Band = function (_React$Component) {
           _react2.default.createElement(
             "section",
             null,
-            this.props.title
-          ),
-          _react2.default.createElement(
-            "section",
-            null,
-            "Artist: " + this.props.artist
-          ),
-          _react2.default.createElement(
-            "section",
-            null,
-            this.props.location
+            _react2.default.createElement(
+              "p",
+              null,
+              this.props.title
+            ),
+            _react2.default.createElement(
+              "p",
+              null,
+              "Artist: " + this.props.artist
+            ),
+            _react2.default.createElement(
+              "p",
+              null,
+              this.props.location
+            )
           ),
           _react2.default.createElement(
             "section",
