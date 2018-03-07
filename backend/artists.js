@@ -1,4 +1,4 @@
-{
+const artists = {
     "artists": 
         [
             {
@@ -38,3 +38,5 @@
             }
         ]
 }
+
+module.exports = artists;

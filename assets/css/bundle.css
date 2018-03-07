@@ -141,7 +141,8 @@ html {
   width: 100%; }
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  color: purple; }
 
 a:visited {
   text-decoration: none; }
