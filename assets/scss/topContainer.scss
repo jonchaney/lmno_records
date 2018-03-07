@@ -5,7 +5,7 @@
 
 h1 {
     font-family: sans-serif;
-    font-family: Roboto;
+    font-family: "Roboto", sans-serif;
     color: white;
     background-color: #ffffffd4;
     line-height: 100%;
@@ -17,7 +17,7 @@ h1 {
 .nav-bar {
     display: flex;
     justify-content: space-around;
-    font-family: Roboto;
+    font-family: "Roboto";
     background-color: #ffffffd4;
     color: purple;
     padding-top: 2%;
