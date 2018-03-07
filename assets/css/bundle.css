@@ -119,7 +119,7 @@ h1 {
       .bands article .band-info section:last-child {
         padding: 5% 10% 0% 0%; }
 
-@media (min-width: 700px) {
+@media screen and (min-width: 700px) {
   .bands {
     display: flex;
     flex-direction: row;
