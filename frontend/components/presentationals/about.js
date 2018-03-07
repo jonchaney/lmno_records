@@ -7,8 +7,8 @@ class About extends React.Component {
 
   render() {
     return (
-        <div>
-      <p>LMNO recordings is a DIY recording space in the Mission District of San Francisco.</p>
+      <div>
+        <p>LMNO recordings is a DIY recording space in the Mission District of San Francisco.</p>
       </div>
     );
   }

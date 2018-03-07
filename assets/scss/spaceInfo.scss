@@ -1,13 +1,15 @@
 .space-info {
     display: flex;
+    justify-content: center;
     padding-top: 27vh;
     div {
         background-color: white;
-        width: 100%;
         font-family: Lato;
-        margin: 4% 4%;
+        border-radius: 5%;
+        width: 87%;
         p {
             padding: 3% 3%;
+            background: transparent;
         }
     }
 }

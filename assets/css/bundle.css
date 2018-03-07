@@ -121,14 +121,16 @@ h1 {
 
 .space-info {
   display: flex;
+  justify-content: center;
   padding-top: 27vh; }
   .space-info div {
     background-color: white;
-    width: 100%;
     font-family: Lato;
-    margin: 4% 4%; }
+    border-radius: 5%;
+    width: 87%; }
     .space-info div p {
-      padding: 3% 3%; }
+      padding: 3% 3%;
+      background: transparent; }
 
 html {
   background-image: url(http://res.cloudinary.com/tonedream/image/upload/v1520275987/lmno_records/rainbowLMNO_pcurx2.jpg);
