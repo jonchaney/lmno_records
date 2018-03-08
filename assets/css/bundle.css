@@ -115,7 +115,7 @@ h1 {
           font-size: 8vh; }
         .bands article .band-info section p {
           padding: 10% 0% 0% 0%;
-          font-size: 2.2vh; }
+          font-size: 2vh; }
       .bands article .band-info section:last-child {
         padding: 5% 10% 0% 0%; }
 
@@ -140,7 +140,8 @@ h1 {
       .bands article .band-info {
         display: flex;
         justify-content: space-between;
-        background: transparent; }
+        background: transparent;
+        height: 13vh; }
         .bands article .band-info section {
           font-family: "Lato", sans-serif;
           display: flex;
