@@ -104,7 +104,8 @@ h1 {
     .bands article .band-info {
       display: flex;
       justify-content: space-between;
-      background: transparent; }
+      background: transparent;
+      height: 13vh; }
       .bands article .band-info section {
         padding: 0% 0% 3% 7%;
         font-family: "Lato", sans-serif;
